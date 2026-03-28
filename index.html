@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,6 +14,13 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
+    }
+
+    main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .container {
@@ -23,7 +31,7 @@
       width: 320px;
     }
 
-    h1 {
+    header h1 {
       text-align: center;
       font-size: 20px;
     }
@@ -81,27 +89,50 @@
       font-size: 12px;
       color: #555;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>Etanol ou Gasolina?</h1>
+<main>
+  <section class="container">
+    
+    <header>
+      <h1>Etanol ou Gasolina?</h1>
+    </header>
 
-  <label>Preço do Etanol (R$)</label>
-  <input type="number" id="etanol" placeholder="Ex: 3.50" step="0.01">
+    <form onsubmit="event.preventDefault(); calcular();">
+      
+      <label for="etanol">Preço do Etanol (R$)</label>
+      <input type="number" id="etanol" placeholder="Ex: 3.50" step="0.01">
 
-  <label>Preço da Gasolina (R$)</label>
-  <input type="number" id="gasolina" placeholder="Ex: 5.00" step="0.01">
+      <label for="gasolina">Preço da Gasolina (R$)</label>
+      <input type="number" id="gasolina" placeholder="Ex: 5.00" step="0.01">
 
-  <button onclick="calcular()">Calcular</button>
+      <button type="submit">Calcular</button>
 
-  <div id="resultado"></div>
+    </form>
 
-  <div class="info">
-    Regra dos 70%: se o etanol custar até 70% do valor da gasolina, compensa.
-  </div>
-</div>
+    <div id="resultado" aria-live="polite"></div>
+
+    <aside class="info">
+      Regra dos 70%: se o etanol custar até 70% do valor da gasolina, compensa.
+    </aside>
+
+  </section>
+</main>
+
+<footer>
+  <!-- Conteúdo gerado com auxílio do ChatGPT (OpenAI) em 2026 -->
+  <p>Parte do conteúdo deste site foi gerado com auxílio de inteligência artificial (ChatGPT - OpenAI).</p>
+</footer>
 
 <script>
   function calcular() {
@@ -129,10 +160,6 @@
     }
   }
 </script>
-<footer>
-  <p>Parte do conteúdo deste site foi gerado com auxílio de inteligência artificial (ChatGPT - OpenAI).</p>
-</footer>
-    <!-- Conteúdo gerado com auxílio do ChatGPT (OpenAI) em 2026 -->
-<p>Este texto foi criado com ajuda de inteligência artificial.</p>
+
 </body>
 </html>
